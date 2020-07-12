@@ -6,6 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'typeface-lobster';
 import 'typeface-open-sans';
 import App from './App';
+import 'font-awesome/css/font-awesome.css';
+import 'bootstrap-social/bootstrap-social.css';
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,3 +21,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+

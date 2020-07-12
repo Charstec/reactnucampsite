@@ -3,6 +3,13 @@ import { Navbar, NavbarBrand } from 'reactstrap';
 import Directory from './DirectoryComponent';
 import CampsiteInfo from './CampsiteInfoComponent.js';
 import { CAMPSITES } from '../shared/campsites';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
+
+<Header />
+                <Directory campsites={this.state.campsites} onClick={campsiteId => this.onCampsiteSelect(campsiteId)} />
+                <CampsiteInfo campsite={this.state.campsites.filter(campsite => campsite.id === this.state.selectedCampsite)[0]} />
+                <Footer />
 
 class Main extends Component {
     constructor(props) {
