@@ -73,5 +73,7 @@ function About(props) {
     );
 }
 
+function RenderPartner({partner}) {
+   
+}
 export default About;
-
