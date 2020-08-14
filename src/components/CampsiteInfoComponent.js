@@ -176,18 +176,4 @@ return <div />;
 
 export default CampsiteInfo;
 
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
 
