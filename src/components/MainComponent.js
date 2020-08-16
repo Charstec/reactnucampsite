@@ -1,4 +1,4 @@
-/*
+
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Directory from './DirectoryComponent';
@@ -64,23 +64,25 @@ class Main extends Component {
 }
 
 export default Main;
-*/
-        
+
+/*        
 import React, { Component } from 'react';
 import Directory from './DirectoryComponent';
 import CampsiteInfo from './CampsiteInfoComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
+import About from './AboutComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { CAMPSITES } from '../shared/campsites';
-
+import { PARTNERS } from '../shared/partners';
 
 class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            campsites: CAMPSITES,      
+            campsites: CAMPSITES,
+            partners: PARTNERS,     
         };
     }
 
@@ -100,6 +102,8 @@ class Main extends Component {
                 <Switch>
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/directory' render={() => <Directory campsites={this.state.campsites} />} />
+                    <Route exact path='/aboutus'
+                    render={() => <About partners={this.state.partners} /> }/>
                     <Redirect to='/home' />
                 </Switch>
                 <Footer />
@@ -110,3 +114,4 @@ class Main extends Component {
         
 
 export default Main;
+*/

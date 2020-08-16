@@ -1,4 +1,4 @@
-/*
+
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
@@ -33,16 +33,6 @@ function Home(props) {
 }
           
 export default Home;   
-*/
-import React from 'react';
 
-function Home(props) {
-    return (
-        <div className="container">
-            <h4>Home</h4>
-        </div>
-    );
-}
 
-export default Home;  
- 
+    
