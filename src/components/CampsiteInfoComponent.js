@@ -113,7 +113,8 @@ function CampsiteInfo(props) {
 
 
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 function RenderCampsite({campsite}) {
@@ -122,7 +123,6 @@ function RenderCampsite({campsite}) {
         <Card>
           <CardImg top src={campsite.image} alt={campsite.name} />
           <CardBody>
-            <CardTitle>{campsite.name}</CardTitle>
             <CardText>{campsite.description}</CardText>
           </CardBody>
         </Card>
@@ -159,19 +159,29 @@ function CampsiteInfo(props) {
   // Inside its render method, check if an object with the  //name "campsite" (passed in via props) can be evaluated 
   // as truthy
  if(props.campsite) {
-   return (
-   <div className="container">
+  return (
+    <div className="container">
     <div className="row">
-     <RenderCampsite campsite={props.campsite} />
-     <RenderComments comments={props.comments} />   
+    <div className="col">
+        <Breadcrumb>
+            <BreadcrumbItem><Link to="/directory">Directory</Link></BreadcrumbItem>
+            <BreadcrumbItem active>{props.campsite.name}</BreadcrumbItem>
+        </Breadcrumb>
+        <h2>{props.campsite.name}</h2>
+        <hr />
+    </div>
+</div>
+      <div className="row">
+          <RenderCampsite campsite={props.campsite} />
+          <RenderComments comments={props.comments} />
       </div>
-   </div>
-   
-   );
- }
+    </div>
+  );
+}
 return <div />;
+}
   
- }
+ 
 
 
 export default CampsiteInfo;
