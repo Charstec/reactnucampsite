@@ -46,7 +46,7 @@ class Main extends Component {
                 <Header />
                 <Switch>
                 <Route path='/home' component={HomePage} />
-                    <Route exact path='/directory' render={() => <Directory campsites={this.state.campsites} />} />
+                    <Route exact path='/directory' render={() => <Directory campsites={this.props.campsites} />} />
                     <Route path='/directory/:campsiteId' component={CampsiteWithId} />
                     <Route exact path='/contactus' component={Contact} />
                     <Route exact path='/about' component={About} />
@@ -60,53 +60,3 @@ class Main extends Component {
 
 export default withRouter(connect(mapStateToProps)(Main));
 
-/*        
-import React, { Component } from 'react';
-import Directory from './DirectoryComponent';
-import CampsiteInfo from './CampsiteInfoComponent';
-import Header from './HeaderComponent';
-import Footer from './FooterComponent';
-import Home from './HomeComponent';
-import About from './AboutComponent';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { CAMPSITES } from '../shared/campsites';
-import { PARTNERS } from '../shared/partners';
-
-class Main extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            campsites: CAMPSITES,
-            partners: PARTNERS,     
-        };
-    }
-
-    
-
-    render() {
-
-        const HomePage = () => {
-            return (
-                <Home />
-            );
-        };
-
-        return (
-            <div>
-                <Header />
-                <Switch>
-                    <Route path='/home' component={HomePage} />
-                    <Route exact path='/directory' render={() => <Directory campsites={this.state.campsites} />} />
-                    <Route exact path='/aboutus'
-                    render={() => <About partners={this.state.partners} /> }/>
-                    <Redirect to='/home' />
-                </Switch>
-                <Footer />
-            </div>
-        );
-        }
-    }  
-        
-
-export default Main;
-*/
